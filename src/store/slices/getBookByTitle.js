@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { BASE_URL } from '../../../utils/environment';
+import { BASE_URL } from '../../utils/environment';
 const host = 'http://localhost';
 const port = '3001';
 

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { BASE_URL } from '../../../utils/environment';
+import { BASE_URL } from '../../utils/environment';
 
 export const allUsersSlice = createSlice({
   name: 'allUsers',
