@@ -2,6 +2,7 @@ import './styles.css';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { BASE_URL } from '../../../utils/environment';
 import validator from 'validator';
 const Swal = require('sweetalert2');
 
@@ -13,7 +14,7 @@ const Register = () => {
   const register = async e => {
     e.preventDefault();
     if (validator.isEmail(registerEmail)) {
-      await axios.post('/api/users/register', {
+      await axios.post(`${BASE_URL}/users/register`, {
         email: registerEmail,
         password: registerPassword,
       });

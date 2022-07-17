@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { createLogger } from 'redux-logger';
+//import { createLogger } from 'redux-logger';
 import genreReducer from './slices/genre.js';
 import categoryReducer from './slices/category.js';
 import isUserAuthReducer from './slices/isUserAuth';

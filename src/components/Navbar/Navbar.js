@@ -1,5 +1,6 @@
 import './style.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { BASE_URL } from '../../../utils/environment';
 import { fetchBooksByGenre } from '../../store/slices/genre';
 import { fetchBookByTitle } from '../../store/slices/getBookByTitle';
 import { useState, useEffect } from 'react';
@@ -28,7 +29,7 @@ function Navbar({ setUserOrders, userOrders, orders, setOrders }) {
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem('user')));
     axios
-      .get('/api/genre/genres')
+      .get(`${BASE_URL}/genre/genres`)
       .then(res => res.data)
       .then(genres => {
         setGenres(genres);
@@ -83,7 +84,7 @@ function Navbar({ setUserOrders, userOrders, orders, setOrders }) {
                       (async () => {
                         try {
                           const userOrders = await axios.get(
-                            `/api/orders/${user.id}`
+                            `${BASE_URL}/orders/${user.id}`
                           );
                           setUserOrders(userOrders.data);
                           navigate(`/user/${user.id}/cart`);
@@ -103,7 +104,7 @@ function Navbar({ setUserOrders, userOrders, orders, setOrders }) {
                       (async () => {
                         try {
                           const userOrders = await axios.get(
-                            `/api/orders/${user.id}`
+                            `${BASE_URL}/orders/${user.id}`
                           );
                           setUserOrders(userOrders.data);
                           navigate(`/user/${user.id}/history`);

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import './style_SingleProduct.css';
 import Swal from 'sweetalert2';
+import { BASE_URL } from '../../../utils/environment';
 
 export const SingleProduct = ({
   orders,
@@ -19,7 +20,7 @@ export const SingleProduct = ({
   useEffect(() => {
     (async () => {
       try {
-        const result = await axios.get(`/api/products/${id}`);
+        const result = await axios.get(`${BASE_URL}/products/${id}`);
         setBook(result.data);
       } catch (error) {
         console.log(error);
@@ -30,8 +31,8 @@ export const SingleProduct = ({
   useEffect(() => {
     (async () => {
       try {
-        await axios.post('/api/orders', orders);
-        const userOrders = await axios.get(`/api/orders/${user.id}`);
+        await axios.post(`${BASE_URL}}/orders`, orders);
+        const userOrders = await axios.get(`${BASE_URL}/orders/${user.id}`);
         setUserOrders(userOrders.data);
         setOrders([]);
       } catch (error) {

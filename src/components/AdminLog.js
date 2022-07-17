@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { BASE_URL } from '../../utils/environment';
 
 const Swal = require('sweetalert2');
 
@@ -19,7 +20,7 @@ function AdminLog() {
 
   const deleteProduct = function (id) {
     axios
-      .delete(`/api/products/${id}`, {
+      .delete(`${BASE_URL}/products/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -40,7 +41,6 @@ function AdminLog() {
             clearInterval(timerInterval);
           },
         }).then(result => {
-          /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
             console.log('I was closed by the timer');
           }
@@ -53,7 +53,7 @@ function AdminLog() {
     if (id === user.id) {
       Swal.fire('Not posible');
     }
-    axios.put(`/api/users/${id}`, { admin: false }).then(() => {
+    axios.put(`${BASE_URL}/users/${id}`, { admin: false }).then(() => {
       Swal.fire('User is no longer admin');
       dispatch(fetchAllUsers());
     });
@@ -62,7 +62,7 @@ function AdminLog() {
     if (id === user.id) {
       Swal.fire('Not posible');
     }
-    axios.put(`/api/users/${id}`, { admin: true }).then(() => {
+    axios.put(`${BASE_URL}/users/${id}`, { admin: true }).then(() => {
       Swal.fire({
         title: 'Re-Confirm',
         text: 'This User will have All Admin access, are you sure?',

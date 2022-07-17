@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { BASE_URL } from '../../../utils/environment';
 import validator from 'validator';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../store/slices/isUserAuth';
@@ -18,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     if (validator.isEmail(loginEmail)) {
       try {
-        const user = await axios.post('/api/users/login', {
+        const user = await axios.post(`${BASE_URL}}/users/login`, {
           email: loginEmail,
           password: loginPassword,
         });

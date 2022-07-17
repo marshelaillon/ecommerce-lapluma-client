@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../../utils/environment';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
@@ -10,7 +11,7 @@ function History() {
   useEffect(() => {
     (async () => {
       try {
-        const result = await axios.get(`/api/orders/history/${user.id}`);
+        const result = await axios.get(`${BASE_URL}/orders/history/${user.id}`);
         setHistory(result.data);
       } catch (error) {
         console.log(error);

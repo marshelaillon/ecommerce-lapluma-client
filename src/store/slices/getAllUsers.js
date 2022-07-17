@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-const host = 'http://localhost';
-const port = '3001';
+import { BASE_URL } from '../../../utils/environment';
 
 export const allUsersSlice = createSlice({
   name: 'allUsers',
@@ -20,7 +19,7 @@ export const { setAllUsers } = allUsersSlice.actions;
 
 export const fetchAllUsers = () => async dispatch => {
   try {
-    const response = await axios.get(`${host}:${port}/api/users`);
+    const response = await axios.get(`${BASE_URL}/users`);
     dispatch(setAllUsers(response.data));
   } catch (error) {
     console.log(error.message);

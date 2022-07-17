@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { BASE_URL } from '../../../utils/environment';
 const host = 'http://localhost';
 const port = '3001';
 
@@ -20,7 +21,7 @@ export const { setBookByTitle } = bookByTitleSlice.actions;
 
 export const fetchBookByTitle = title => async dispatch => {
   try {
-    const response = await axios.get(`${host}:${port}/api/book/${title}`);
+    const response = await axios.get(`${BASE_URL}/book/${title}`);
     dispatch(setBookByTitle([...response.data]));
   } catch (error) {
     console.log(error.message);

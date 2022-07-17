@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { BASE_URL } from '../../../utils/environment';
 import axios from 'axios';
 const host = 'http://localhost';
 const port = '3001';
@@ -21,7 +22,7 @@ export const { setGenre } = genresSlice.actions;
 // Async thunk
 export const fetchBooksByGenre = genre => async dispatch => {
   try {
-    const response = await axios.get(`${host}:${port}/api/genre/${genre}`);
+    const response = await axios.get(`${BASE_URL}/genre/${genre}`);
     dispatch(setGenre(response.data));
   } catch (error) {
     console.log(error.message);

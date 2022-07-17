@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import { BASE_URL } from '../../utils/environment';
 const Swal = require('sweetalert2');
 
 function AddGenre() {
@@ -16,7 +17,7 @@ function AddGenre() {
   };
   useEffect(() => {
     axios
-      .get('/api/genre/genres')
+      .get(`${BASE_URL}/genre/genres`)
       .then(res => res.data)
       .then(genres => setGenres(genres));
   }, [genres, edit]);
@@ -25,7 +26,7 @@ function AddGenre() {
     e.preventDefault();
     axios
       .post(
-        '/api/genre/genre',
+        `${BASE_URL}/genre/genre`,
         {
           name: name,
         },
@@ -47,7 +48,7 @@ function AddGenre() {
 
   const deleteProduct = function (id) {
     axios
-      .delete(`/api/genre/genre/${id}`, {
+      .delete(`${BASE_URL}/genre/genre/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
@@ -60,7 +61,7 @@ function AddGenre() {
   const editProduct = function (id) {
     axios
       .put(
-        `/api/genre/genre/${id}`,
+        `${BASE_URL}/genre/genre/${id}`,
         {
           name: newName,
         },

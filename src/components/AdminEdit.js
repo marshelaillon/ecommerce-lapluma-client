@@ -1,5 +1,6 @@
 import './styles.css';
 import { useState, useEffect } from 'react';
+import { BASE_URL } from '../../../utils/environment';
 import { useNavigate } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -21,7 +22,7 @@ function AdminEdit() {
   const [image, setImage] = useState('');
   const { user } = useSelector(state => state.isUserAuth);
   const token = JSON.parse(localStorage.getItem('user')).token;
-  
+
   useEffect(() => {
     dispatch(setUser(JSON.parse(localStorage.getItem('user'))));
   }, [navigate]);
@@ -55,16 +56,20 @@ function AdminEdit() {
   const handleSubmit = function (e) {
     e.preventDefault();
     axios
-      .put(`/api/products/${id}`, {
-        title: title,
-        author: author,
-        quantity: quantity,
-        editorial: editorial,
-        price: price,
-        sinopsis: sinopsis,
-        genre: genre,
-        image: image,
-      }, {headers: {Authorization: `Bearer ${token}`}})
+      .put(
+        `${BASE_URL}/products/${id}`,
+        {
+          title: title,
+          author: author,
+          quantity: quantity,
+          editorial: editorial,
+          price: price,
+          sinopsis: sinopsis,
+          genre: genre,
+          image: image,
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
       .then(res => {
         if (res.data.id) {
           navigate('/admin');

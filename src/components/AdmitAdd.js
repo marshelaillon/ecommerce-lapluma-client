@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { setUser } from '../store/slices/isUserAuth';
+import { BASE_URL } from '../../utils/environment';
 function AdminAdd() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ function AdminAdd() {
     e.preventDefault();
     axios
       .post(
-        '/api/products',
+        `${BASE_URL}/products`,
         {
           title: title,
           author: author,

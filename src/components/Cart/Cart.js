@@ -1,5 +1,6 @@
 import './styles.css';
 import axios from 'axios';
+import { BASE_URL } from '../../../utils/environment';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -48,12 +49,12 @@ function Cart({ orders, setOrders, userOrders, setUserOrders }) {
                       onChange={e => {
                         (async () => {
                           try {
-                            await axios.put(`/api/orders/${order.id}`, {
+                            await axios.put(`${BASE_URL}/orders/${order.id}`, {
                               quantity: e.target.value,
                               totalPrice: e.target.value * order.book.price,
                             });
                             const updatedOrders = await axios.get(
-                              `/api/orders/${user.id}`
+                              `${BASE_URL}/orders/${user.id}`
                             );
                             setUserOrders(updatedOrders.data);
                             navigate(`/user/${id}/cart`);
@@ -87,9 +88,11 @@ function Cart({ orders, setOrders, userOrders, setUserOrders }) {
                       onClick={() => {
                         (async () => {
                           try {
-                            await axios.delete(`/api/orders/${order.id}`);
+                            await axios.delete(
+                              `${BASE_URL}/orders/${order.id}`
+                            );
                             const updatedOrders = await axios.get(
-                              `/api/orders/${id}`
+                              `${BASE_URL}/orders/${id}`
                             );
                             setUserOrders(updatedOrders.data);
                             navigate(`/user/${id}/cart`);
@@ -148,12 +151,12 @@ function Cart({ orders, setOrders, userOrders, setUserOrders }) {
                   try {
                     userOrders.map(
                       async order =>
-                        await axios.put(`/api/orders/${order.id}`, {
+                        await axios.put(`${BASE_URL}/orders/${order.id}`, {
                           status: 'complete',
                         })
                     );
                     const updatedOrders = await axios.get(
-                      `/api/orders/${user.id}`
+                      `${BASE_URL}/orders/${user.id}`
                     );
                     setUserOrders(updatedOrders.data);
                     setOrders([]);
