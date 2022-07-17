@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { setUser } from '../store/slices/isUserAuth';
-import { BASE_URL } from '../../utils/environment.js';
+import { BASE_URL } from '../utils/environment.js';
 function AdminAdd() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

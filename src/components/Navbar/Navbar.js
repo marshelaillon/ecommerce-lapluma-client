@@ -241,7 +241,7 @@ function Navbar({ setUserOrders, userOrders, orders, setOrders }) {
                       }}
                       className={'dropdown-item nav-link'}
                     >
-                      {genre.name}
+                      {genre.name[0].toUpperCase() + genre.name.slice(1)}
                     </a>
                   </li>
                 ))}

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../store/slices/isUserAuth';
-import { BASE_URL } from '../../utils/environment.js';
+import { BASE_URL } from '../utils/environment.js';
 
 function AdminLogIn() {
   const [loginEmail, setLoginEmail] = useState('');

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { BASE_URL } from '../../utils/environment.js';
+import { BASE_URL } from '../utils/environment.js';
 
 const Swal = require('sweetalert2');
 

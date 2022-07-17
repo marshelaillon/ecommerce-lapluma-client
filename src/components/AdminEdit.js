@@ -1,6 +1,6 @@
 import './styles.css';
 import { useState, useEffect } from 'react';
-import { BASE_URL } from '../../utils/environment.js';
+import { BASE_URL } from '../utils/environment.js';
 import { useNavigate } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';

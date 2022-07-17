@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { BASE_URL } from '../../utils/environment.js';
 import axios from 'axios';
-const host = 'http://localhost';
-const port = '3001';
 
 export const categoriesSlice = createSlice({
   name: 'category',
