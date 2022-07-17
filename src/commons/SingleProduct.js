@@ -50,8 +50,8 @@ export const SingleProduct = ({
             className="add-to-cart"
             onClick={() => {
               Swal.fire(
-                'Are you Loggedin?',
-                'You should login to buy a book.',
+                'Are you logged in?',
+                'You should be logged in to buy a book',
                 'question'
               );
             }}
