@@ -147,8 +147,8 @@ function Navbar({ setUserOrders, userOrders, orders, setOrders }) {
                 className="dropdown-menu genres-container"
                 aria-labelledby="navbarDropdown"
               >
-                {genres.map(genre => (
-                  <li className="nav-item active user-buttons">
+                {genres.map((genre, i) => (
+                  <li className="nav-item active user-buttons" key={i}>
                     <a
                       onClick={() => {
                         clickHandler(genre.name);
@@ -233,8 +233,8 @@ function Navbar({ setUserOrders, userOrders, orders, setOrders }) {
                 className="genres-container dropdown-menu genres-container"
                 aria-labelledby="navbarDropdown"
               >
-                {genres.map(genre => (
-                  <li className="nav-item active user-buttons">
+                {genres.map((genre, i) => (
+                  <li className="nav-item active user-buttons" key={i}>
                     <a
                       onClick={() => {
                         clickHandler(genre.name);
