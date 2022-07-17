@@ -1,0 +1,135 @@
+th{
+  text-align: center;
+font-size: 19px; 
+font-weight: 400;
+}
+
+btn{
+  margin: 20px auto 20px auto ;
+
+}
+.admin-btn{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px auto 0px auto;
+  width: 100%;
+}
+.tabla {
+  text-align: center;
+}
+.titulo {
+  color: white;
+  text-align: center;
+}
+.textoTabla {
+  color: white;
+  text-align: center;
+}
+.container {
+  background-color: rgb(140, 140, 146);
+  display: flex;
+  justify-content: space-evenly;
+  height: 70px;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+.cuenta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cuenta-opciones {
+  display: none;
+}
+.cuenta:hover .cuenta-opciones {
+  display: block;
+}
+.nav-genre {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(140, 140, 146);
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.view {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.titulo {
+  color: white;
+  text-align: center;
+}
+
+.textoTabla {
+  color: white;
+  text-align: center;
+}
+
+.container {
+  background-color: rgb(140, 140, 146);
+  display: flex;
+  justify-content: space-evenly;
+  height: 70px;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.admin-view {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 100px;
+  color: white;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.table-title {
+  background-color: rgb(0, 0, 0);
+  opacity: 70%;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+.editButton {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.add-book {
+  width: 180px;
+}
+.tachito {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.titulosid {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.editSubmit {
+  margin-bottom: 1900px;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 95px;
+  padding: 5px;
+}
+.editForm {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+}
+
+.labelAdd {
+  display: flex;
+  text-align: center;
+}
+.sinopsis {
+  height: 330px;
+}
