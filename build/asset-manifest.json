@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.566d9a01.css",
+    "main.js": "/static/js/main.fa620307.js",
+    "static/media/plumita.png": "/static/media/plumita.c7de60d099f489d5bcb9.png",
+    "index.html": "/index.html",
+    "main.566d9a01.css.map": "/static/css/main.566d9a01.css.map",
+    "main.fa620307.js.map": "/static/js/main.fa620307.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.566d9a01.css",
+    "static/js/main.fa620307.js"
+  ]
+}
