@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import './style_SingleProduct.css';
 import Swal from 'sweetalert2';
-import { BASE_URL } from '../../utils/environment';
+import { BASE_URL } from '../utils/environment';
 
 export const SingleProduct = ({
   orders,

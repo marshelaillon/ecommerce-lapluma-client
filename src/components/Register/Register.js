@@ -2,7 +2,7 @@ import './styles.css';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { BASE_URL } from '../../utils/environment';
+import { BASE_URL } from '../../utils/environment.js';
 import validator from 'validator';
 const Swal = require('sweetalert2');
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
-import { BASE_URL } from '../../utils/environment';
+import { BASE_URL } from '../../utils/environment.js';
 import validator from 'validator';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../store/slices/isUserAuth';

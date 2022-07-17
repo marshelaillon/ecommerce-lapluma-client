@@ -1,6 +1,6 @@
 import './styles.css';
 import axios from 'axios';
-import { BASE_URL } from '../../utils/environment';
+import { BASE_URL } from '../../utils/environment.js';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';

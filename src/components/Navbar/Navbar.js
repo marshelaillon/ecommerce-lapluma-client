@@ -1,6 +1,6 @@
 import './style.css';
 import { useDispatch } from 'react-redux';
-import { BASE_URL } from '../../utils/environment';
+import { BASE_URL } from '../../utils/environment.js';
 import { fetchBooksByGenre } from '../../store/slices/genre';
 import { fetchBookByTitle } from '../../store/slices/getBookByTitle';
 import { useState, useEffect } from 'react';
