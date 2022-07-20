@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     if (validator.isEmail(loginEmail)) {
       try {
-        const user = await axios.post(`${BASE_URL}}/users/login`, {
+        const user = await axios.post(`${BASE_URL}/users/login`, {
           email: loginEmail,
           password: loginPassword,
         });

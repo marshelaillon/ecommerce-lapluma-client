@@ -15,7 +15,7 @@ function AdminLogIn() {
   const login = async e => {
     e.preventDefault();
     try {
-      const user = await axios.post(`${BASE_URL}}/admin/login`, {
+      const user = await axios.post(`${BASE_URL}/admin/login`, {
         email: loginEmail,
       });
       localStorage.setItem('user', JSON.stringify(user.data));

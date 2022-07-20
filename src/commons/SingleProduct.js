@@ -31,7 +31,7 @@ export const SingleProduct = ({
   useEffect(() => {
     (async () => {
       try {
-        await axios.post(`${BASE_URL}}/orders`, orders);
+        await axios.post(`${BASE_URL}/orders`, orders);
         const userOrders = await axios.get(`${BASE_URL}/orders/${user.id}`);
         setUserOrders(userOrders.data);
         setOrders([]);
