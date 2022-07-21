@@ -1,4 +1,4 @@
-# La Pluma, E-commerce
+# La Pluma, e-commerce
 
 E-commerce of books with features such as: purchase history, list of products of interest, sending email with
 purchase confirmation.
