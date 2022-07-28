@@ -25,3 +25,4 @@ CLIENT: https://la-pluma.netlify.app/
 
 **Server:** Node, Express, PostgreSQL, Sequelize, JWT
 # LaPluma-Ecommerce
+# Ecommerce-LaPluma
